@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tokame's Portfolio</title>
+    <meta name="viewport" content="width=1024">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- 좌측 사이드바 -->
+        <aside class="sidebar">
+            <div class="profile-logo">
+                <img src="images/profile-logo.webp" alt="프로필 로고" class="logo-img" />
+            </div>
+            <h1>TOKAME's Portfolio</h1>
+            <p class="intro">
+Hello! I combine 3D modeling and development to bring original ideas to life and share my creative experiences.
+Interested in the magic where art meets code? Let’s create together!            </p>
+            <nav>
+                <ul>
+                    <li><a href="#portfolio">PORTPOLIO</a></li>
+                    <li><a href="#skills">SKILL</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- 우측 메인 컨텐츠 -->
+        <main class="main-content">
+            <div class="main-intro">
+                안녕하세요! 저는 3D 모델링과 개발을 함께 즐기는 창작자입니다.<br>
+                현실에 없는 무언가를 3D로 직접 구현하고, 그 작품을 웹 기술로 세상에 공개하는 과정을 사랑합니다.<br>
+                이 블로그에는 작업 과정, 개발 팁, 3D 아트워크, 그리고 창작의 즐거움을 기록합니다.<br>
+                나만의 창작물을 만드는 데 관심이 있거나, 3D와 개발의 시너지가 궁금하다면 함께 소통해요!
+            </div>
+            <!-- Portfolio Section -->
+            <section id="portfolio">
+                <h2>PORTFOLIO</h2>
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="3d">3D Modeling</button>
+                    <button class="filter-btn" data-filter="pixel">Pixel art</button>
+                    <button class="filter-btn" data-filter="project">Project</button>
+                </div>
+                <div class="portfolio-items">
+                    <!-- 3D 모델링 예시 (확대 모달, data-modal 없이) -->
+                    <div class="portfolio-item" data-category="3d">
+                        <img src="images/3d-ramune.webp" alt="3D 라무네 모델">
+                        <div class="portfolio-info">
+                            <h3>라무네 무빙 포스터</h3>
+                            <p>블렌더로 제작한 얼음텍스쳐를 이용한 무빙 텍스쳐</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="3d">
+                        <img src="images/3D_model/Kenma.webp" alt="하이큐 켄마">
+                        <div class="portfolio-info">
+                            <h3>하이큐 켄마</h3>
+                            <p>룩업 모델링 </p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="3d">
+                        <img src="images/3D_model/SecondImage_ToonShade.webp" alt="방 모델링">
+                        <div class="portfolio-info">
+                            <h3>일반적인 방</h3>
+                            <p>간단하게 모디파이어 공부용</p>
+                        </div>
+                    </div>
+                    <!-- 픽셀 아트 예시 -->
+                    <div class="portfolio-item" data-category="pixel">
+                        <img src="images/pixel-plave.webp" alt="픽셀 플레이브">
+                        <div class="portfolio-info">
+                            <h3>픽셀로 그린 므메미무</h3>
+                            <p>플레이브 므메미무 팬아트</p>
+                        </div>
+                    </div>
+                    <!-- 프로젝트(외부 모달) -->
+                    <div class="portfolio-item" data-category="project" data-modal="jymg">
+                        <img src="images/jymg-banner.webp" alt="조선요마기">
+                        <div class="portfolio-info">
+                            <h3>조선요마기</h3>
+                            <p>탄막 슈팅게임 프로젝트</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills">
+                <h2>SKILL</h2>
+                <div class="skills-list">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Csharp_Logo.png" alt="C#" title="C#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"
+                        title="Python">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="C++"
+                        title="C++">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Unity_2021.svg" alt="Unity"
+                        title="Unity">
+                    <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git" title="Git">
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>CONTACT</h2>
+                <ul class="contact-list horizontal">
+  <li>
+    <span>Email:</span>
+    <a href="mailto:rjsrkdvlftn@gmail.com">rjsrkdvlftn@gmail.com</a>
+    <span>|</span>
+    <span>GitHub:</span>
+    <a href="#">github.com/j-inha</a>
+    <span>|</span>
+    <span>Instagram:</span>
+    <a href="#">@your-instagram</a>
+  </li>
+</ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- 동적 모달용 div (초기에는 비어 있음, script.js에서 fetch로 채움) -->
+    <div id="generic-modal" class="modal-bg"></div>
+
+    <!-- 스크립트는 body 마지막에 두는 것을 권장 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
